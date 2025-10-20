@@ -1,0 +1,60 @@
+<div class="vault-container">
+  <h1>Recepies</h1>
+
+  <nav class="difficulty-filter">
+    <a 
+      [routerLink]="['/', currentMealRite, 'all']" 
+      routerLinkActive="active-filter">
+      All
+    </a>
+    <a 
+      [routerLink]="['/', currentMealRite, 'easy']" 
+      routerLinkActive="active-filter">
+      Easy
+    </a>
+    <a 
+      [routerLink]="['/', currentMealRite, 'medium']" 
+      routerLinkActive="active-filter">
+      Medium
+    </a>
+  </nav>
+
+  <div class="rituals-scroll-container">
+    
+    <ng-container *ngIf="filteredRituals$ | async as rituals; else loading">
+      <div *ngIf="rituals.length > 0; else noRituals">
+        
+        <a class="ritual-card" 
+           *ngFor="let ritual of rituals"
+           [routerLink]="['/recipe', ritual.id]">
+          
+          <img [src]="ritual.image" [alt]="ritual.name" class="ritual-image">
+          
+          <div class="ritual-content">
+            <h3>{{ ritual.name }}</h3>
+            <p class="ritual-ingredients">
+              {{ ritual.ingredients.slice(0, 3).join(', ') }}...
+            </p>
+            
+            <div class="ritual-info">
+              <span>🔥 {{ ritual.caloriesPerServing }} Calories</span>
+              <span>⭐ {{ ritual.rating }} Rating</span>
+              <span>⏰ {{ ritual.cookTimeMinutes }} min</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <ng-template #noRituals>
+        <p class="void-message">По этому фильтру рецептов нет. Пустота...</p>
+      </ng-template>
+
+    </ng-container>
+
+    <ng-template #loading>
+      <p>Ищем рецепты во тьме...</p>
+    </ng-template>
+
+  </div>
+
+  </div>

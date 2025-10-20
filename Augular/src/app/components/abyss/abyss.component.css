@@ -1,0 +1,12 @@
+.abyss-container {
+  text-align: center;
+  padding-top: 100px;
+}
+.abyss-container h1 {
+  font-size: 80px;
+  margin: 0;
+  color: #ccc;
+}
+.abyss-container h2 {
+  font-size: 24px;
+}

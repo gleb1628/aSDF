@@ -1,0 +1,23 @@
+<div class="app-shell">
+  <nav class="side-nav">
+    <a 
+      [routerLink]="['/breakfast', currentDifficulty]" 
+      routerLinkActive="active-link">
+      Breakfast
+    </a>
+    <a 
+      [routerLink]="['/lunch', currentDifficulty]" 
+      routerLinkActive="active-link">
+      Lunch
+    </a>
+    <a 
+      [routerLink]="['/dinner', currentDifficulty]" 
+      routerLinkActive="active-link">
+      Dinner
+    </a>
+  </nav>
+
+  <main class="content-area">
+    <router-outlet></router-outlet>
+  </main>
+</div>

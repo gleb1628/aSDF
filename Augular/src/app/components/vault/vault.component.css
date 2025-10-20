@@ -1,0 +1,94 @@
+.vault-container h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.difficulty-filter {
+  margin-bottom: 20px;
+}
+
+.difficulty-filter a {
+  text-decoration: none;
+  color: #8a8a8a;
+  margin-right: 20px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.difficulty-filter a.active-filter {
+  color: #000;
+  font-weight: 700;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rituals-scroll-container {
+  display: flex;
+  overflow-x: auto; /* !!! Вот он, горизонтальный скролл !!! */
+  padding-bottom: 20px; /* Чтобы скроллбар не прилипал */
+  gap: 25px; /* Пробелы между карточками */
+}
+
+.ritual-card {
+  display: block;
+  width: 280px; /* Ширина карточки */
+  flex-shrink: 0; /* Чтобы не сжимались */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ritual-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.ritual-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Чтобы картинка не ломалась */
+}
+
+.ritual-content {
+  padding: 15px;
+}
+
+.ritual-content h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ritual-ingredients {
+  font-size: 13px;
+  color: #777;
+  height: 40px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.ritual-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
+}
+
+.ritual-info span {
+  display: inline-block;
+}
+
+.void-message {
+  font-size: 18px;
+  color: #777;
+}

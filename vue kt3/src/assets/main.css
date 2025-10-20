@@ -1,0 +1,15 @@
+@import './base.css';
+
+#app {
+  display: flex;
+  justify-content: center;
+}
+
+.page-container {
+  width: 100%;
+  max-width: 864px;
+  margin: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

@@ -1,0 +1,47 @@
+<button (click)="goBack()" class="back-button">
+  &larr; Go back
+</button>
+
+<div class="lair-container">
+  <ng-container *ngIf="ritual$ | async as ritual; else loading">
+    
+    <h2>{{ ritual.name }}</h2>
+    
+    <div class="recipe-layout">
+      
+      <div class="instructions-block">
+        <h3>Instructions</h3>
+        <ol>
+          <li *ngFor="let step of ritual.instructions">{{ step }}</li>
+        </ol>
+      </div>
+      
+      <div class="info-block">
+        <img [src]="ritual.image" [alt]="ritual.name" class="recipe-image">
+        
+        <div class="info-box">
+          <h3>Information</h3>
+          <div class="info-grid">
+            <span>Calories</span>
+            <strong>{{ ritual.caloriesPerServing }}</strong>
+            
+            <span>Rating</span>
+            <strong>{{ ritual.rating }} / 5</strong>
+            
+            <span>Prep time</span>
+            <strong>{{ ritual.prepTimeMinutes }} min</strong>
+            
+            <span>Cook time</span>
+            <strong>{{ ritual.cookTimeMinutes }} min</strong>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </ng-container>
+
+  <ng-template #loading>
+    <p>Ищем рецепт...</p>
+  </ng-template>
+</div>

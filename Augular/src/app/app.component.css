@@ -1,0 +1,46 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fa; /* Фон как в макете */
+}
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+  width: 150px; /* Ширина боковой панели */
+  background-color: #ffffff;
+  padding: 40px 20px;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.side-nav a {
+  text-decoration: none;
+  color: #8a8a8a;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  /* Для вертикального текста, если надо. Но в макете он обычный */
+  /* writing-mode: vertical-rl; */
+  /* transform: rotate(180deg); */
+}
+
+.side-nav a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Стиль для активной ссылки */
+.side-nav a.active-link {
+  color: #000000;
+  font-weight: 700;
+  background-color: #e6f7ff;
+}
+
+.content-area {
+  flex-grow: 1; /* Занимает все оставшееся место */
+  padding: 30px;
+  overflow-y: auto; /* Если контента много */
+}
