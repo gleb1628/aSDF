@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./abyss.component.css']
 })
 export class AbyssComponent {
-  // Логики не надо, просто компонент
+
+
 }
