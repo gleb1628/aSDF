@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { DarkGateService } from '../../core/dark-gate.service';
 import { Ritual } from '../../core/ritual.model';
-import { Location } from '@angular/common'; // Импорт для кнопки "Назад"
+import { Location } from '@angular/common'; 
 
 @Component({
   selector: 'app-lair',
@@ -18,12 +18,11 @@ export class LairComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private darkGate: DarkGateService,
-    private location: Location // Инжектим Location
+    private location: Location 
   ) {}
 
   ngOnInit(): void {
-    // Берем 'id' из URL, превращаем в число
-    // и по нему ищем ритуал в нашем сервисе
+
     this.ritual$ = this.route.paramMap.pipe(
       switchMap(params => {
         const id = Number(params.get('id'));
@@ -32,8 +31,9 @@ export class LairComponent implements OnInit {
     );
   }
 
-  // Функция для кнопки "Назад"
+
   goBack(): void {
     this.location.back();
   }
+
 }
