@@ -21,7 +21,7 @@
 }
 
 .instructions-block {
-  flex: 2; /* Занимает 2/3 ширины */
+  flex: 2;
 }
 .instructions-block h3 {
   font-size: 20px;
@@ -36,7 +36,7 @@
 }
 
 .info-block {
-  flex: 1; /* Занимает 1/3 ширины */
+  flex: 1; 
 }
 
 .recipe-image {
@@ -70,4 +70,5 @@
 .info-grid strong {
   text-align: right;
   color: #000;
+
 }
