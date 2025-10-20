@@ -9,23 +9,22 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   
-  // Тут храним текущую "сложность" из URL
+
   currentDifficulty: string = 'all';
 
   constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    // Подписываемся на смену роутов
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      // При каждой смене URL, мы смотрим в параметры дочернего роута
-      // и вытаскиваем 'difficulty'.
-      // Это и есть "сохранение" сложности при переключении.
+
       const childRoute = this.route.snapshot.firstChild;
       if (childRoute) {
         this.currentDifficulty = childRoute.paramMap.get('difficulty') || 'all';
       }
     });
   }
+
 }
